@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mysql-standalone-container:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=testuser
+      - MYSQL_PASSWORD=testuser@123
+    volumes:
+      - /data/mysql
+
+  image-store-service:
+    image: kishorevbhosale/imagestore
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-standalone-container
+    volumes:
+      - /data/kishorevbhosale/imagestore
