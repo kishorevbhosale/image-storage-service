@@ -23,13 +23,13 @@ Create Mysql and spring-boot-app Docker images and run application in docker net
 <code> docker pull mysql:5.7</code>
 2) Create a docker network to communicate spring boot app and mysql db <br/>
 <code>docker network create springboot-mysql-net</code>
-3) run the mysql container in the network <br/>
+3) run the mysql container in the network <br />
 <code>docker run --name mysqldb --network image-mysql-net -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=imagestore -
 e MYSQL_USER=sa -e MYSQL_PASSWORD=1234 -d mysql:5.7
-</code>
-4) Verify that the container is operational<br/>  
+</code><br />
+4) Verify that the container is operational<br />
 <code> docker exec -it <container-id> bash</code>
-<code> mysql -u<username> -p<password></code>
+<code> mysql -u<username> -p<password></code><br />
 5) update the application.properties file
    spring.datasource.url=jdbc:mysql://mysqldb:3306/imagestore<br />
    spring.datasource.username=sa<br />
