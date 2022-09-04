@@ -31,11 +31,9 @@ e MYSQL_USER=sa -e MYSQL_PASSWORD=1234 -d mysql:5.7
 <code> docker exec -it <container-id> bash</code>
 <code> mysql -u<username> -p<password></code>
 5) update the application.properties file
-<code>
-   spring.datasource.url=jdbc:mysql://mysqldb:3306/imagestore<br/>
-   spring.datasource.username=sa<br/>
-   spring.datasource.password=1234<br/>
-</code>
+   spring.datasource.url=jdbc:mysql://mysqldb:3306/imagestore<br />
+   spring.datasource.username=sa<br />
+   spring.datasource.password=1234<br />
 6) Create docker image of application
 <code>mvn clean install</code>
 <code>docker build . -t <image-name></code>
