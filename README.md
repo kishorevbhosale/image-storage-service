@@ -31,7 +31,7 @@ e MYSQL_USER=sa -e MYSQL_PASSWORD=1234 -d mysql:5.7
 <code> docker exec -it <container-id> bash</code>
 <code> mysql -u<username> -p<password></code>
 5) update the application.properties file
-```yaml
+```dockerfile
 spring.datasource.url=jdbc:mysql://mysqldb:3306/imagestore
 spring.datasource.username=sa
 spring.datasource.password=1234
